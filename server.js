@@ -28,8 +28,8 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Route to handle email sending
-app.post('/send-email', upload.none(), (req, res) => {
+// Route to handle email sending (matches Vercel path)
+app.post('/api/send-email', (req, res) => {
     const { name, email, subject, message } = req.body;
 
     const mailOptions = {
